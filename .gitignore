@@ -1,0 +1,6 @@
+.vscode
+user-data
+__pycache__
+app.log
+.DS_Store
+*.html

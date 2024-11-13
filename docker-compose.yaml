@@ -1,0 +1,34 @@
+name: http-response-cach
+services:
+  api:
+    build:
+      dockerfile: Dockerfile
+    environment:
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - FLASK_APP=app
+      - FLASK_ENV=development    
+    expose:
+      - "55000"
+    ports:
+      - "55000:55000"      
+    command: flask run -p 55000 --host=0.0.0.0
+    depends_on:
+      - redis
+      
+  fetcher:
+    build:
+      dockerfile: Dockerfile
+    environment:
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+    command: /usr/local/bin/python3 fetcher.py
+    depends_on:
+      - redis
+
+  redis:
+    image: redis:alpine
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes
+    ports:
+      - "6379"

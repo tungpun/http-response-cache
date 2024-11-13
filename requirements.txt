@@ -1,0 +1,5 @@
+flask
+retry
+requests
+python-dotenv
+redis
