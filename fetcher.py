@@ -1,4 +1,3 @@
-from requests import post
 from logz import *
 from config import *
 import processing

@@ -27,4 +27,4 @@ HTTP_TIMEOUT = 10
 REDIS_KEY_EXPIRE = 30  # in seconds
 SLEEP_SECONDS = 5
 
-IGNORE_HTTP_HEADERS = ['Host', 'Accept-Encoding', 'Connection']
+IGNORE_HTTP_HEADERS = ['Host', 'Accept-Encoding', 'Connection', 'Content-Length']
