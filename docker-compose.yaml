@@ -15,7 +15,7 @@ services:
     command: flask run -p 55000 --host=0.0.0.0
     depends_on:
       - redis
-      
+
   fetcher:
     build:
       dockerfile: Dockerfile
@@ -26,9 +26,12 @@ services:
     depends_on:
       - redis
 
+
   redis:
     image: redis:alpine
+    command: redis-server
     environment:
       - ALLOW_EMPTY_PASSWORD=yes
-    ports:
+    expose:
       - "6379"
+    
