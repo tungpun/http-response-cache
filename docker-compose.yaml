@@ -34,4 +34,5 @@ services:
       - ALLOW_EMPTY_PASSWORD=yes
     expose:
       - "6379"
-    
+    ports:
+      - "127.0.0.1:56379:6379"
