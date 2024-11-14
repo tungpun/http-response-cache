@@ -21,7 +21,7 @@ REDIS_PORT = os.getenv("REDIS_PORT", 6379)
 HTTP_TIMEOUT = 10
 
 REDIS_KEY_EXPIRE = 600  # in seconds
-SLEEP_SECONDS = 60
+SLEEP_SECONDS = 30
 
 ## debugging purpose
 # REDIS_KEY_EXPIRE = 30  # in seconds
