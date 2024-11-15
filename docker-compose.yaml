@@ -7,7 +7,7 @@ services:
       - REDIS_HOST=redis
       - REDIS_PORT=6379
       - FLASK_APP=app
-      - FLASK_ENV=development    
+      - FLASK_ENV=development
     expose:
       - "55000"
     ports:

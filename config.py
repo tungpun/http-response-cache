@@ -20,11 +20,11 @@ REDIS_PORT = os.getenv("REDIS_PORT", 6379)
 
 HTTP_TIMEOUT = 10
 
-REDIS_KEY_EXPIRE = 600  # in seconds
-SLEEP_SECONDS = 30
+REDIS_KEY_EXPIRE = int(os.getenv("REDIS_KEY_EXPIRE", 3600))  # in seconds
+SLEEP_SECONDS = int(os.getenv("SLEEP_SECONDS", 60))
 
-## debugging purpose
-# REDIS_KEY_EXPIRE = 30  # in seconds
-# SLEEP_SECONDS = 5
+logger.info("Configurations:")
+logger.info(f"redis key expire: {REDIS_KEY_EXPIRE} seconds")
+logger.info(f"fetcher's sleep seconds: {SLEEP_SECONDS} seconds")
 
 IGNORE_HTTP_HEADERS = ['Host', 'Accept-Encoding', 'Connection', 'Content-Length']
