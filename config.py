@@ -19,7 +19,6 @@ REDIS_HOST = os.getenv("REDIS_HOST", "localhost")
 REDIS_PORT = os.getenv("REDIS_PORT", 6379)
 
 HTTP_TIMEOUT = 10
-
 REDIS_KEY_EXPIRE = int(os.getenv("REDIS_KEY_EXPIRE", 3600))  # in seconds
 SLEEP_SECONDS = int(os.getenv("SLEEP_SECONDS", 60))
 

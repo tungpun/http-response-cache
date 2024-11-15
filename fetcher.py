@@ -33,7 +33,7 @@ def start_a_round():
                     logger.info(f"Setting keys for {redis_main_key} in the DB")
                     redis.set(f'response:{redis_main_key}', response, ex=REDIS_KEY_EXPIRE)  # set the response in the redis
                     redis.set(f"base64_url:{redis_main_key}", base64_url, ex=REDIS_KEY_EXPIRE)  # refresh the expire time for the url
-                    if post_data:
+                    if post_data is not None:
                         redis.set(f"post_data:{redis_main_key}", post_data, ex=REDIS_KEY_EXPIRE)  # refresh the expire time for post_data
                     if req_headers_in_string != {}:
                         redis.set(f"headers:{redis_main_key}", req_headers_in_string, ex=REDIS_KEY_EXPIRE)  # refresh the expire time for headers
